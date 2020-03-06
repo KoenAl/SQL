@@ -1,5 +1,8 @@
--- This SQL Query is created in order to upload backups to azure blob storage. However, it can be completely altered to do whatever you want as it gets the list of databases on the database engine and then runs your desired query against those databases.
+-- This SQL Query is created in order to upload backups to azure blob storage. 
+--However, it can be completely altered to do whatever you want as it gets 
+--the list of databases on the database engine and then runs your desired query against those databases.
 -- Used this query due to SQL managed instance constraints, use it with a SQL job / agent to run daily. 
+-- Note: An identity is required first, use CREATE CREDENTIAL TSQL for that
 Declare @DatabaseName nvarchar(max); -- database name 
 DECLARE db_cursor CURSOR READ_ONLY FOR  
 
